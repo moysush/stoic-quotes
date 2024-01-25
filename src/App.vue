@@ -45,14 +45,24 @@ function generateRandomNumber() {
         <div class="button-container d-flex justify-content-between p-1">
           <div>
             <a
-              class="regenerate-button btn btn-dark"
+              class="regenerate-button btn btn-dark mx-1"
               :class="`text-${randomColor}`"
               :href="`https://twitter.com/intent/tweet?text=${encodeURIComponent(
                 quotes.text
-              )}&url=#`"
+              )}&url=https://stoic-quotes-for-living.netlify.app/`"
               target="_blank"
             >
               <i class="bi bi-twitter-x"></i>
+            </a>
+            <a
+              class="regenerate-button btn btn-dark"
+              :class="`text-${randomColor}`"
+              :href="`https://www.facebook.com/sharer/sharer.php?u=https://stoic-quotes-for-living.netlify.app/&quote=${encodeURIComponent(
+                quotes.text
+              )}`"
+              target="_blank"
+            >
+              <i class="bi bi-facebook"></i>
             </a>
           </div>
           <div>
@@ -68,7 +78,13 @@ function generateRandomNumber() {
       </div>
     </div>
     <footer class="text-center mt-2">
-      By <a href="https://github.com/imsushmoy" :class="`text-${randomColor}`" target="_blank">Sushmoy</a>
+      By
+      <a
+        href="https://github.com/imsushmoy"
+        :class="`text-${randomColor}`"
+        target="_blank"
+        >Sushmoy</a
+      >
     </footer>
   </main>
 </template>

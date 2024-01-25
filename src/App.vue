@@ -42,7 +42,7 @@ function generateRandomNumber() {
         <h3 class="quote-author text-end fw-lighter fst-italic fs-5">
           {{ "- " + quotes.author }}
         </h3>
-        <div class="button-container d-flex justify-content-between p-1">
+        <div class="button-container d-flex justify-content-between p-1 mt-3">
           <div>
             <a
               class="regenerate-button btn btn-dark mx-1"

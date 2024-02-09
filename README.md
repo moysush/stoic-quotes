@@ -9,7 +9,9 @@ Welcome to Stoic-Quotes, a simple yet powerful Quote Machine designed to bring d
 - [My process](#my-process)
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
+  - [Future Plan](#future-plan)
 - [Credits](#credits)
+- [Author](#author)
 
 ## Overview
 
@@ -31,4 +33,8 @@ Welcome to Stoic-Quotes, a simple yet powerful Quote Machine designed to bring d
 
 ### What I learned
 
-Enhanced my knowledge about the Tailwind CSS and Bootstrap. I tried mixing both to experiment with CSS.
+Enhanced my knowledge about the Tailwind CSS, Bootstrap, and Vue.js.
+
+### Future Plan
+1. Add a drop-down feature to explore only a chosen author of the user
+2. Replace the colors

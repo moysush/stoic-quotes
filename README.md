@@ -1,6 +1,6 @@
 # Stoic-Quotes
 
-This template should help get you started developing with Vue 3 in Vite.
+This is Quote Machine to get a Random Stoic Quote each time based upon page Refreshes or by clicking Next.
 
 ## Recommended IDE Setup
 

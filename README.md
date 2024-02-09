@@ -1,22 +1,34 @@
 # Stoic-Quotes
 
-This is Quote Machine to get a Random Stoic Quote each time based upon page Refreshes or by clicking Next.
+This is a Quote Machine designed to display a random Stoic quote each time the page refreshes or when the user clicks a 'Next' button.
 
 
-## Project Setup
+## Table of contents
 
-```sh
-npm install
-```
+- [Overview](#overview)
+  - [Screenshot](#screenshot)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+- [Credits](#credits)
 
-### Compile and Hot-Reload for Development
+## Overview
 
-```sh
-npm run dev
-```
+### Screenshot
 
-### Compile and Minify for Production
+![](./assets/screenshot.png)
 
-```sh
-npm run build
-```
+### Built with
+
+- Semantic HTML5 markup
+- Tailwind CSS
+- Bootstrap
+- Vue.js
+
+## Credits
+
+- Stoic quotes sourced from [insert source here]
+
+### What I learned
+
+Enhanced my knowledge about the Tailwind CSS and Bootstrap. I tried mixing both to experiment with CSS.

@@ -1,7 +1,6 @@
 # Stoic-Quotes
 
-This is a Quote Machine designed to display a random Stoic quote each time the page refreshes or when the user clicks a 'Next' button.
-
+Welcome to Stoic-Quotes, a simple yet powerful Quote Machine designed to bring daily doses of wisdom from Stoic philosophers. Whether you're seeking inspiration or guidance, this project provides a seamless experience of discovering timeless Stoic quotes with just a click of a button.
 
 ## Table of contents
 
@@ -16,7 +15,7 @@ This is a Quote Machine designed to display a random Stoic quote each time the p
 
 ### Screenshot
 
-![](./assets/screenshot.png)
+![](./src/assets/screenshot.png)
 
 ### Built with
 
@@ -27,7 +26,8 @@ This is a Quote Machine designed to display a random Stoic quote each time the p
 
 ## Credits
 
-- Stoic quotes sourced from [insert source here]
+- Stoic quotes sourced from [Orion Philosophy - Stoic Quotes](https://www.orionphilosophy.com/stoic-blog/stoic-quotes)
+
 
 ### What I learned
 

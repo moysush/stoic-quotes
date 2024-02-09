@@ -3,9 +3,14 @@
 import quotesData from "./quotes.json";
 import { ref, computed } from "vue";
 
+// randomIndex function to not repeat the same logic
+const randomIndex = (length) => Math.floor(Math.random() * length);
+
 // Quotes
-const randomNumber = ref(Math.floor(Math.random() * (quotesData.length)));
-const quotes = computed(() => quotesData[randomNumber.value]);
+const randomQuoteIndex = ref(randomIndex(quotesData.length));
+const randomNumber = ref(randomIndex(quotesData[randomQuoteIndex.value].length));
+const quote = computed(() => quotesData[randomQuoteIndex.value][randomNumber.value]);
+
 
 // Colors
 const randomColorNumber = ref(0);
@@ -13,8 +18,9 @@ const colors = ["secondary", "success", "danger", "warning"];
 const randomColor = computed(() => colors[randomColorNumber.value]);
 
 // Next Button
-function generateRandomNumber() {
-  randomNumber.value = Math.floor(Math.random() * (quotesData.length));
+function nextButton() {
+  randomQuoteIndex.value = Math.floor(Math.random() * quotesData.length);
+  randomNumber.value = Math.floor(Math.random() * (quotesData[randomQuoteIndex.value].length));
   randomColorNumber.value = Math.floor(Math.random() * (colors.length));
 }
 </script>
@@ -32,7 +38,7 @@ function generateRandomNumber() {
         <img
           alt="ancient-greece logo"
           class="logo img-fluid card-img shadow"
-          src="./assets/stoic1.1.jpg"
+          src="/src/assets/stoic1.1.jpg"
         />
       </div>
       <div class="quote-wrapper card-body">
@@ -40,28 +46,28 @@ function generateRandomNumber() {
           <u> Stoic Quotes For Living </u>
         </h4>
         <p class="quote-text lead mt-3">
-          {{ quotes.text }}
+          {{ quote.text }}
         </p>
         <h3 class="quote-author text-end fw-lighter fst-italic fs-5">
-          {{ "- " + quotes.author }}
+          {{ "- " + quote.author }}
         </h3>
         <div class="button-container d-flex justify-content-between p-1 mt-5">
           <div>
             <a
-              class="regenerate-button btn btn-dark mx-1"
+              class="btn btn-dark mx-1"
               :class="`text-${randomColor}`"
               :href="`https://twitter.com/intent/tweet?text=${encodeURIComponent(
-                quotes.text
+                quote.text
               )}&url=https://stoic-quotes-for-living.netlify.app/`"
               target="_blank"
             >
               <i class="bi bi-twitter-x"></i>
             </a>
             <a
-              class="regenerate-button btn btn-dark"
+              class="btn btn-dark"
               :class="`text-${randomColor}`"
               :href="`https://www.facebook.com/sharer/sharer.php?u=https://stoic-quotes-for-living.netlify.app/&quote=${encodeURIComponent(
-                quotes.text
+                quote.text
               )}`"
               target="_blank"
             >
@@ -70,8 +76,8 @@ function generateRandomNumber() {
           </div>
           <div>
             <button
-              @click="generateRandomNumber"
-              class="regenerate-button btn btn-dark"
+              @click="nextButton"
+              class="btn btn-dark"
               :class="`text-${randomColor}`"
             >
               <i class="bi bi-caret-right-square-fill"></i> Next
@@ -83,7 +89,7 @@ function generateRandomNumber() {
     <footer class="text-center mt-2">
       By
       <a
-        href="https://github.com/imsushmoy"
+        href="https://github.com/SushCod3"
         :class="`text-${randomColor}`"
         target="_blank"
         >Sushmoy</a

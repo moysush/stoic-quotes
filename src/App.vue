@@ -14,7 +14,7 @@ const quote = computed(() => quotesData[randomQuoteIndex.value][randomNumber.val
 
 // Colors
 const randomColorNumber = ref(0);
-const colors = ["secondary", "success", "danger", "warning"];
+const colors = ["primary", "secondary", "success", "danger", "info", "warning", "light"];
 const randomColor = computed(() => colors[randomColorNumber.value]);
 
 // Next Button
@@ -31,7 +31,6 @@ function nextButton() {
   <main class="container">
     <div
       class="card p-3 mt-5 shadow"
-      :class="`text-bg-${randomColor}`"
       style="max-width: 480px;"
     >
       <div>
@@ -42,7 +41,7 @@ function nextButton() {
         />
       </div>
       <div class="quote-wrapper card-body">
-        <h4 class="text-center card-title mt-3">
+        <h4 class="text-center card-title mt-3" :class="`text-${randomColor}`">
           <u> Stoic Quotes For Living </u>
         </h4>
         <p class="quote-text lead mt-3">
@@ -54,8 +53,8 @@ function nextButton() {
         <div class="button-container d-flex justify-content-between p-1 mt-5">
           <div>
             <a
-              class="btn btn-dark mx-1"
-              :class="`text-${randomColor}`"
+              class="btn mx-1"
+              :class="`btn-outline-${randomColor}`"
               :href="`https://twitter.com/intent/tweet?text=${encodeURIComponent(
                 quote.text
               )}&url=https://stoic-quotes-for-living.netlify.app/`"
@@ -64,8 +63,8 @@ function nextButton() {
               <i class="bi bi-twitter-x"></i>
             </a>
             <a
-              class="btn btn-dark"
-              :class="`text-${randomColor}`"
+              class="btn"
+              :class="`btn-outline-${randomColor}`"
               :href="`https://www.facebook.com/sharer/sharer.php?u=https://stoic-quotes-for-living.netlify.app/&quote=${encodeURIComponent(
                 quote.text
               )}`"
@@ -77,8 +76,8 @@ function nextButton() {
           <div>
             <button
               @click="nextButton"
-              class="btn btn-dark"
-              :class="`text-${randomColor}`"
+              class="btn"
+              :class="`btn-outline-${randomColor}`"
             >
               <i class="bi bi-caret-right-square-fill"></i> Next
             </button>

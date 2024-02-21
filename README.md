@@ -36,5 +36,5 @@ Welcome to Stoic-Quotes, a simple yet powerful Quote Machine designed to bring d
 Enhanced my knowledge about the Tailwind CSS, Bootstrap, and Vue.js.
 
 ### Future Plan
-1. Add a drop-down feature to explore only a chosen author of the user
+1. Add a drop-down feature to let user explore quotes of only the chosen author of their choice
 2. Replace the colors

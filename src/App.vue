@@ -42,7 +42,7 @@ function nextButton() {
       </div>
       <div class="quote-wrapper card-body">
         <h4 class="text-center card-title mt-3" :class="`text-${randomColor}`">
-          <u> Stoic Quotes For Living </u>
+          <u> Stoic Quotes </u>
         </h4>
         <p class="quote-text lead mt-3">
           {{ quote.text }}

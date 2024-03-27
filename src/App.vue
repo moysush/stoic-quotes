@@ -8,35 +8,53 @@ const randomIndex = (length) => Math.floor(Math.random() * length);
 
 // Quotes
 const randomQuoteIndex = ref(randomIndex(quotesData.length));
-const randomNumber = ref(randomIndex(quotesData[randomQuoteIndex.value].length));
-const quote = computed(() => quotesData[randomQuoteIndex.value][randomNumber.value]);
-
+const randomNumber = ref(
+  randomIndex(quotesData[randomQuoteIndex.value].length)
+);
+const quote = computed(
+  () => quotesData[randomQuoteIndex.value][randomNumber.value]
+);
 
 // Colors
-const randomColorNumber = ref(0);
-const colors = ["primary", "secondary", "success", "danger", "info", "warning", "light"];
+const colors = ["primary", "secondary", "success", "danger", "info", "warning"];
+const randomColorNumber = ref(randomIndex(colors.length));
 const randomColor = computed(() => colors[randomColorNumber.value]);
+
+const buttonClicked = ref(false);
 
 // Next Button
 function nextButton() {
-  randomQuoteIndex.value = Math.floor(Math.random() * quotesData.length);
-  randomNumber.value = Math.floor(Math.random() * (quotesData[randomQuoteIndex.value].length));
-  randomColorNumber.value = Math.floor(Math.random() * (colors.length));
+  randomQuoteIndex.value = randomIndex(quotesData.length);
+  randomNumber.value = randomIndex(quotesData[randomQuoteIndex.value].length);
+  randomColorNumber.value = randomIndex(colors.length);
+
+  // animation
+  buttonClicked.value = true;
+
+  // reset buttonClicked after a short delay
+  setTimeout(() => {
+    buttonClicked.value = false;
+  }, 1000);
 }
+// dark mode
+const prefersDarkMode = ref(
+  window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches
+);
 </script>
 
 <template>
   <header></header>
 
-  <main class="container">
+  <main class="container" :data-bs-theme="prefersDarkMode ? 'dark' : 'light'">
     <div
       class="card p-3 mt-5 shadow"
-      style="max-width: 480px;"
+      :class="{ animate: buttonClicked }"
+      style="max-width: 480px"
     >
       <div>
         <img
           alt="ancient-greece logo"
-          class="logo img-fluid card-img shadow"
+          class="logo img-fluid card-img"
           src="/src/assets/stoic1.1.jpg"
         />
       </div>
@@ -57,7 +75,7 @@ function nextButton() {
               :class="`btn-outline-${randomColor}`"
               :href="`https://twitter.com/intent/tweet?text=${encodeURIComponent(
                 quote.text
-              )}&url=https://stoic-quotes-for-living.netlify.app/`"
+              )}&url=https://sushcod3.github.io/stoic-quotes/`"
               target="_blank"
             >
               <i class="bi bi-twitter-x"></i>
@@ -65,7 +83,7 @@ function nextButton() {
             <a
               class="btn"
               :class="`btn-outline-${randomColor}`"
-              :href="`https://www.facebook.com/sharer/sharer.php?u=https://stoic-quotes-for-living.netlify.app/&quote=${encodeURIComponent(
+              :href="`https://www.facebook.com/sharer/sharer.php?u=https://sushcod3.github.io/stoic-quotes/&quote=${encodeURIComponent(
                 quote.text
               )}`"
               target="_blank"
@@ -85,7 +103,7 @@ function nextButton() {
         </div>
       </div>
     </div>
-    <footer class="text-center mt-2">
+    <footer class="text-center mt-4 text-secondary">
       By
       <a
         href="https://github.com/SushCod3"
@@ -98,5 +116,18 @@ function nextButton() {
 </template>
 
 <style scoped>
+.animate {
+  animation: fadeIn 1s ease forwards;
+}
 
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(1rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 </style>

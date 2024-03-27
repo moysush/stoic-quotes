@@ -3,7 +3,7 @@
 #app {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 0.5rem;
   font-weight: normal;
 }
 
@@ -21,7 +21,8 @@ a,
   }
 }
 
-@media (min-width: 720px) {
+@media (min-width: 36rem) { 
+  /* 36rem == 576px */
   body {
     display: flex;
     place-items: center;

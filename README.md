@@ -23,7 +23,7 @@ Live Site: [Stoic Quotes](https://sushcod3.github.io/stoic-quotes/)
 
 ### Screenshot
 
-![Screenshot Dark](/screenshot-dark.png)
+![Screenshot Dark](/public/screenshot-dark.png)
 
 ### Technologies Used
 

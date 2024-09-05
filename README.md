@@ -2,7 +2,7 @@
 
 Welcome to Stoic Quotes, your gateway to timeless wisdom from Stoic philosophers. With just a click, discover profound insights and inspiration to navigate life's challenges. Embrace daily doses of Stoic wisdom effortlessly.
 
-Live Site: [Stoic Quotes](https://sushcod3.github.io/stoic-quotes/)
+Live Site: [Stoic Quotes](https://isushmoy.github.io/stoic-quotes/)
 
 ## Table of contents
 
